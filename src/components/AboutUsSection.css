@@ -30,6 +30,7 @@
     height: 480px;
     width: 350px;
     border-radius: 18px;
+    object-fit: cover;
 }
 
 .about-us-desc {

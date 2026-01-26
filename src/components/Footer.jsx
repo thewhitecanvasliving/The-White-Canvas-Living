@@ -3,15 +3,15 @@ import './Footer.css'
 
 const Footer = () => {
     return (
-        <div className='footer'>
+        <div className='footer' id='footer'>
             <div className="footer-content-wrapper">
-                <img src="/wclLogo1.png" alt="" className="footer-logo" />
+                <img src="/images/about-us-img.jpeg" alt="" className="footer-logo" />
                 <div className="footer-section pages">
                     <div className="footer-section-title">SITEMAP</div>
-                    <a href='#' className="footer-section-items">Home</a>
+                    <a href='/' className="footer-section-items">Home</a>
                     <a href='#aboutus' className="footer-section-items">About Us</a>
                     <a href='#featured-section' className="footer-section-items">Portfolio</a>
-                    <a href='#' className="footer-section-items">Contact</a>
+                    <a href='#footer' className="footer-section-items">Contact</a>
                 </div>
 
                 <div className="footer-section services">
