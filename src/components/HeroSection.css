@@ -19,7 +19,7 @@
     position: absolute;
     width: 100%;
     top: 0;
-    background-color: rgba(90, 72, 46, 0.842);
+    background-color: rgba(90, 72, 46, 0.7);
 }
 
 .hero-content {
@@ -40,7 +40,7 @@
     font-weight: bolder;
     color: white;
     text-align: center;
-    line-height: 90px;
+    line-height: 110px;
     margin-bottom: 40px;
 }
 
