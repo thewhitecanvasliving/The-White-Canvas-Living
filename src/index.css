@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+:root {
+    --primary-color: #f5eee7;
+    --secondary-color: #C3A46B;
+    --tertiary-color: #e8a87c;
+
+    --primary-font: 'Playfair Script';
+    --secondary-font: 'Montserrat', sans-serif;
+}
