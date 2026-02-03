@@ -1,5 +1,5 @@
 .footer{
-    background-color: var(--secondary-color);
+    background-color: #f9f0ee;
     position: sticky;
     padding: 60px 200px;
 }
@@ -18,7 +18,7 @@
     display: flex;
     justify-content: space-around;
 
-    background-color: var(--secondary-color);
+    /* background-color: var(--secondary-color); */
 }
 
 .footer-logo {
@@ -42,6 +42,9 @@
 }
 
 .footer-section-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: fit-content;
     margin-bottom: 5px;
     color: #645444;

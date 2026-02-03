@@ -27,7 +27,9 @@ const Footer = () => {
                     <div className="footer-section-title">CONTACT</div>
                     <a href='mailto:thewhitecanvasliving@gmail.com' className="footer-section-items">thewhitecanvasliving@gmail.com</a>
                     <span className="footer-section-items">+91 82405 26335  |  +91 70034 37512</span>
-                    <a href='https://www.instagram.com/thewhitecanvasliving' target='_blank' className="footer-section-items"><i class="fa-brands fa-instagram fa-2x"></i></a>
+                    <a href='https://www.instagram.com/thewhitecanvasliving' target='_blank' className="footer-section-items" style={{gap:'6px'}}>
+                        <i class="fa-brands fa-instagram fa-2x"></i> thewhitecanvasliving
+                    </a>
                 </div>
             </div>
             <hr />
