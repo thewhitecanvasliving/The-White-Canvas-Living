@@ -5,14 +5,24 @@
     width: 100%;
     height: 70px;
     padding: 0px 10vw;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    background-color: white;
-    border-bottom: 1px solid #5a3a2e27;
+    background-color: rgba(255, 255, 255, 0);
+    /* border-bottom: 1px solid #5a3a2e27; */
     box-sizing: border-box;
+    background: rgba(255, 255, 255, 0);
+    transition: all 0.35s ease, box-shadow 0.35s ease;
+}
+
+.navbar-section.scrolled {
+    background: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
+}
+
+.nav-link-items {
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
 }
 
 .nav-items-left {
@@ -29,9 +39,9 @@
 }
 
 .company-name {
-    font-size: 24px;
-    font-weight: 700;
-    font-family: 'Playfair Script', serif;
+    font-size: 40px;
+    font-weight: 400;
+    font-family: 'Allura', serif;
     color: var(--secondary-color);
 }
 
@@ -88,7 +98,7 @@
         z-index: 999;
         display: block;
     }
-    
+
     .nav-items-right {
         position: fixed;
         top: 0;
@@ -99,14 +109,22 @@
         flex-direction: column;
         transform: translateX(-101%);
     }
-    
+
     .nav-link-items {
         width: 100%;
         height: auto;
         justify-content: center;
         padding: 15px 0;
     }
+
     .open {
         transform: translateX(0%);
+    }
+
+    .company-name {
+        font-size: 32px;
+        font-weight: 400;
+        font-family: 'Allura';
+        color: var(--secondary-color);
     }
 }

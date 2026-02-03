@@ -7,7 +7,7 @@ const HeroSection = () => {
             <img src="/images/hero-section-img.jpeg" className='hero-image' alt="" />
             <div className="hero-img-cover">
                 <div className="hero-content">
-                    <div className="hero-section-title" data-aos="fade-up" data-aos-duration="1200">Spaces that tell <br /> your story</div>
+                    <div className="hero-section-title" data-aos="fade-up" data-aos-duration="1200">Spaces that tell your story</div>
                     <div className="hero-section-subtitle" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1500">Creating timeless interiors with warmth, elegance, and your unique story</div>
                     <div className="hero-section-btns" data-aos="fade-up" data-aos-delay="200" data-aos-duration="2000">
                         <a href='#featured-section' className="view-our-work-btn">
