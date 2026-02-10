@@ -35,9 +35,9 @@ const Navbar = () => {
 
             <div className={'nav-items-right' + (menuOpen ? ' open' : '')}>
                 <a className="nav-link-items home" href="/" onClick={() => setMenuOpen(false)}>Home</a>
-                <a className="nav-link-items portfolio" href="#featured-section" onClick={() => setMenuOpen(false)}>Portfolio</a>
-                <a className="nav-link-items about" href="#aboutus" onClick={() => setMenuOpen(false)}>About</a>
-                <a className="nav-link-items contact" href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+                <a className="nav-link-items portfolio" href="/#featured-section" onClick={() => setMenuOpen(false)}>Portfolio</a>
+                <a className="nav-link-items about" href="/#aboutus" onClick={() => setMenuOpen(false)}>About</a>
+                <a className="nav-link-items contact" href="/#contact" onClick={() => setMenuOpen(false)}>Contact</a>
             </div>
         </div>
     )
