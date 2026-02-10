@@ -53,7 +53,7 @@
 }
 
 .footer-section-items:hover {
-    color: bisque;
+    color: var(--secondary-color);
 }
 
 .footer-bottom-text {
