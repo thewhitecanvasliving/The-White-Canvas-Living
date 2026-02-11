@@ -31,11 +31,11 @@ The site highlights:
 
 ## 🛠 Tech Stack
 
-- **HTML5**
+- **React**
 - **CSS3**
-- **JavaScript**
 - **AOS (Animate On Scroll) Library**
 - **Font Awesome Icons**
+- **Vercel**
 
 
 ---
