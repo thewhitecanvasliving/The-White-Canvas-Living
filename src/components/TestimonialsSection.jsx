@@ -1,37 +1,23 @@
 import { useState } from 'react'
 import './TestimonialsSection.css'
 import { useEffect } from 'react'
+import { Quote } from 'lucide-react';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const testimonials = [
     {
-        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-    Pellentesque vel metus lorem. Quisque ac iaculis odio, a faucibus nunc.
-    Cras a vulputate lorem. Fusce cursus erat velit, eget porta lectus gravida sit amet. Quisque ac iaculis odio, a faucibus nunc.
-    Cras a vulputate lorem. Fusce cursus erat velit, eget porta lectus gravida sit amet. `,
-        author: "Naru Kundu",
+        text: `Working with them was an absolute pleasure. They are truly talented, coming up with amazing, unique design ideas that far exceeded my expectations. Communication was fantastic throughout the whole process, and they always respected my budget and met deadlines. I highly recommend them for any interior design work.`,
     },
     {
-        text: `Sed non lacus vel nulla pharetra varius. Nam laoreet odio ligula.
-    Duis ornare, neque efficitur imperdiet sollicitudin, nisi est posuere nisi.`,
-        author: "Riya Sen",
+        text: `We feel great pleasure to communicate that we are very satisfied with the interior work done for my flat in Newtown by Arunima & her concern.
+Their commitment to work schedule, finishing of work in pre-fixed time is very praiseworthy.`,
     },
-    {
-        text: `Vivamus ultricies pretium tortor non condimentum.
-    Duis sit amet magna vitae lorem tempus blandit.`,
-        author: "Arjun Das",
-    },
-    {
-        text: `Sed non lacus vel nulla pharetra varius. Nam laoreet odio ligula.
-    Duis ornare, neque efficitur imperdiet sollicitudin, nisi est posuere nisi.`,
-        author: "Riya Sen",
-    },
-    {
-        text: `Vivamus ultricies pretium tortor non condimentum.
-    Duis sit amet magna vitae lorem tempus blandit.`,
-        author: "Arjun Das",
-    },
+    // {
+    //     text: `Vivamus ultricies pretium tortor non condimentum.
+    // Duis sit amet magna vitae lorem tempus blandit.`,
+    //     author: "Arjun Das",
+    // },
 ];
 
 const TestimonialsSection = () => {
@@ -58,8 +44,9 @@ const TestimonialsSection = () => {
 
     return (
         <div className="testimonials-section">
+            <div className="section-pre-title">TESTIMONIALS</div>
             <div className="section-title testimonials">
-                Testimonials
+                Kind words from our clients
             </div>
             <div className="section-subtitle" data-aos='fade-up'>Don't just take our word for it - hear from those who've experienced the transformation</div>
 
@@ -74,8 +61,11 @@ const TestimonialsSection = () => {
                     >
                         {testimonials.map((testimonial, index) => (
                             <div className="testimonial-card" key={index} data-aos='fade-up' data-aos-delay='100'>
+                                <div className="quote-icon">
+                                    <Quote size={60} strokeWidth={1.5} />
+                                </div>
                                 <div className="testimonial-text">{testimonial.text}</div>
-                                <div className="testimonial-author">~ {testimonial.author}</div>
+                                {testimonial.author && (<div className="testimonial-author">~ {testimonial.author}</div>)}
                             </div>
                         ))}
                     </div>

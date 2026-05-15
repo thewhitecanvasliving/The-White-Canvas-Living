@@ -29,13 +29,13 @@ const Navbar = () => {
             </button>
 
             <a className="nav-items-left" href="/">
-                <span className="company-name">The White Canvas Living</span>
+                <span className={`company-name ${scrolled ? 'scrolled' : ''}`}>The White Canvas Living</span>
                 {/* <img src="/images/navbar-logo.png" className='navbar-logo' alt="" /> */}
             </a>
 
-            <div className={'nav-items-right' + (menuOpen ? ' open' : '')}>
+            <div className={`nav-items-right ${scrolled ? 'scrolled' : ''} ${menuOpen ? ' open' : ''}`}>
                 <a className="nav-link-items home" href="/" onClick={() => setMenuOpen(false)}>Home</a>
-                <a className="nav-link-items portfolio" href="/#featured-section" onClick={() => setMenuOpen(false)}>Portfolio</a>
+                <a className="nav-link-items portfolio" href="/#featured-section" onClick={() => setMenuOpen(false)}>Featured</a>
                 <a className="nav-link-items about" href="/#aboutus" onClick={() => setMenuOpen(false)}>About</a>
                 <a className="nav-link-items contact" href="/#contact" onClick={() => setMenuOpen(false)}>Contact</a>
             </div>

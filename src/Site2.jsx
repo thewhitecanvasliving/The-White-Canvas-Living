@@ -32,7 +32,10 @@ const Site2 = () => {
     return (
         <div className='site-page'>
             <Navbar />
-            <div className="site-page-title">Site 2</div>
+            <div className="back-btn" onClick={() => window.history.back()}>
+                &lt; Back
+            </div>
+            <div className="site-page-title">Residence</div>
 
             <div className="gallery">
                 {galleryItems.map((item, index) => (

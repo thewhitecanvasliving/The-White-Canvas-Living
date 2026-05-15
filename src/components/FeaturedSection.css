@@ -10,10 +10,11 @@
 }
 
 .featured-card {
+    position: relative;
     height: 520px;
     aspect-ratio: 3/4;
     overflow: hidden;
-    border-radius: 18px;
+    border-radius: 10px 40px;
     box-shadow:
         0 4px 10px #8b754626,
         0 12px 30px #8b794626;
@@ -23,7 +24,49 @@
     transform: translateY(-5px);
 }
 
+.card-gradient {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+        rgba(0,0,0,0),
+        rgba(0,0,0,0),
+        rgba(0,0,0,0.8));
+    pointer-events: none;
+}
+
+.featured-card:hover .featured-image {
+    transform: scale(1.06);
+}
+
+.card-info {
+    z-index: 3;
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    color: white;
+    z-index: 2;
+}
+
+.project-title {
+    font-family: var(--primary-font);
+    font-size: 45px;
+    font-weight: 600;
+    line-height: 45px;
+}
+
+.project-subtitle {
+    margin-top: 8px;
+    font-family: var(--secondary-font);
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 1.5px;
+}
+
 .featured-image {
+    z-index: -999;
     height: 100%;
     aspect-ratio: 3/4;
     transition: all 0.25s ease-in-out;
@@ -124,11 +167,21 @@
 
     .featured-card {
         height: auto;
-        width: 90%;
+        width: 95%;
     }
 
     .featured-image {
         height: auto;
         width: 100%;
+    }
+
+    .project-title {
+        margin: 0;
+        font-size: 34px;
+        line-height: normal;
+    }
+    .project-subtitle {
+        margin: 0;
+        font-size: 14px;
     }
 }

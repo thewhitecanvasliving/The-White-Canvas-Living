@@ -17,7 +17,7 @@ function App() {
         <div className='container'>
           <FeaturedSection />
           <AboutUsSection />
-          {/* <TestimonialsSection /> */}
+          <TestimonialsSection />
         </div>
       </div>
 

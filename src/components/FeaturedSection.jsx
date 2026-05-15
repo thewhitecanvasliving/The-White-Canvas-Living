@@ -13,24 +13,46 @@ const FeaturedSection = () => {
 
     return (
         <div className='featured-section' id='featured-section'>
+            <div className="section-pre-title">FEATURED PROJECTS</div>
             <div className="section-title featured">
-                Featured Projects
+                Spaces Designed. Stories Inspired.
             </div>
             <div className="section-subtitle" data-aos='fade-up'>Discover our latest transformations that blend functionality with timeless beauty</div>
 
             <div className="featured-images-wrapper">
-                <div className="featured-card" data-aos="fade-up" data-aos-delay="200">
+                {/* card 1 */}
+                <a href="/site-2" className="featured-card" data-aos="fade-up" data-aos-delay="200">
+                    <div className="card-gradient">
+                        <div className="card-info">
+                            <h2 className="project-title">Residence</h2>
+                            <div className="project-subtitle">DUM DUM. KOLKATA</div>
+                        </div>
+                    </div>
                     <img src="/images/featured2.JPG" className="featured-image" alt="Featured Project 2" />
-                </div>
-                <div className="featured-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="/images/featured1.JPG" className="featured-image" alt="Featured Project 1" />
-                </div>
-                <div className="featured-card" data-aos="fade-up" data-aos-delay="200">
+                </a>
+                {/* card 2 */}
+                <a href="/site-3" className="featured-card" data-aos="fade-up" data-aos-delay="100">
+                    <div className="card-gradient">
+                        <div className="card-info">
+                            <h2 className="project-title">Studio<br />Apartment</h2>
+                            <div className="project-subtitle">NAKTALA, KOLKATA</div>
+                        </div>
+                    </div>
+                    <img src="/images/featured3-1.png" className="featured-image" alt="Featured Project 1" />
+                </a>
+                {/* card 3 */}
+                <a href='/site-1' className="featured-card" data-aos="fade-up" data-aos-delay="200">
+                    <div className="card-gradient">
+                        <div className="card-info">
+                            <h2 className="project-title">Residence</h2>
+                            <div className="project-subtitle">DUM DUM, KOLKATA</div>
+                        </div>
+                    </div>
                     <img src="/images/featured3.jpeg" className="featured-image" alt="Featured Project 3" />
-                </div>
+                </a>
             </div>
 
-            <div className="projects-dropdown">
+            {/* <div className="projects-dropdown">
                 <button className="see-all-projects-btn">
                     SEE ALL PROJECTS ▾
                 </button>
@@ -39,7 +61,7 @@ const FeaturedSection = () => {
                     <a href="/site-1" target="_blank">Site 1</a>
                     <a href="/site-2" target="_blank">Site 2</a>
                 </div>
-            </div>
+            </div> */}
 
         </div>
     )

@@ -8,10 +8,15 @@ body::-webkit-scrollbar {
 }
 
 :root {
-    --primary-color: #fff9ea;
-    --secondary-color: #C3A46B;
-    --tertiary-color: #e8a87c;
+    --primary-color: #F1E4D1; /* #fff9e5
+    #efdec9
+    #e3d0ba
+    #F1E4D1
+    #eee4d9 */
+    --secondary-color: #4a3f35;
+    --tertiary-color: #cca377;
 
     --primary-font: 'Playfair Script';
     --secondary-font: 'Montserrat', sans-serif;
 }
+/* #6b653f */

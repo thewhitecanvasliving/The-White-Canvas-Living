@@ -16,12 +16,12 @@
 }
 
 .navbar-section.scrolled {
-    background: #ffffff;
+    background: #fff9ea;
+    color: var(--secondary-color);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
 }
 
 .nav-link-items {
-    color: var(--secondary-color);
     transition: color 0.3s ease;
 }
 
@@ -42,6 +42,10 @@
     font-size: 40px;
     font-weight: 400;
     font-family: 'Allura', serif;
+    color: #cca377;
+}
+
+.company-name.scrolled {
     color: var(--secondary-color);
 }
 
@@ -51,6 +55,11 @@
     align-items: center;
     gap: 12px;
     transition: all 0.25s ease-in-out;
+    color: #cca377;
+}
+
+.nav-items-right.scrolled {
+    color: var(--secondary-color);
 }
 
 .nav-link-items {
@@ -59,7 +68,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: var(--secondary-color);
+    color: inherit;
     font-weight: 600;
     font-size: 16px;
     border: 0 1px solid black;
@@ -125,6 +134,10 @@
         font-size: 32px;
         font-weight: 400;
         font-family: 'Allura';
+        color: #cca377;
+    }
+
+    .company-name.scrolled {
         color: var(--secondary-color);
     }
 }

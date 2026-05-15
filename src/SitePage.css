@@ -3,8 +3,27 @@
   min-height: 100vh;
 }
 
+.back-btn {
+  margin-top: 100px;   
+  margin: 20px;
+  margin-left: 25px;
+  padding: 6px 14px;
+  width: fit-content;
+  border-radius: 200px;
+  font-family: var(--secondary-font);
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background-color: var(--tertiary-color);
+  cursor: pointer;
+  transition: all 0.12s linear;
+}
+.back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
 .site-page-title {
-  margin-top: 100px;
   font-family: 'Allura', cursive;
   font-size: 78px;
   font-weight: 500;

@@ -6,6 +6,7 @@ import './index.css'
 import App from './App.jsx'
 import Site1 from './Site1.jsx'
 import Site2 from './Site2.jsx'
+import Site3 from './Site3.jsx'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: '/site-2',
     element: <Site2 />,
+  },
+  {
+    path: '/site-3',
+    element: <Site3 />,
   },
 ])
 
