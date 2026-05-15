@@ -25,7 +25,7 @@ const FeaturedSection = () => {
                     <div className="card-gradient">
                         <div className="card-info">
                             <h2 className="project-title">Residence</h2>
-                            <div className="project-subtitle">DUM DUM. KOLKATA</div>
+                            <div className="project-subtitle">DUM DUM, KOLKATA</div>
                         </div>
                     </div>
                     <img src="/images/featured2.JPG" className="featured-image" alt="Featured Project 2" />
