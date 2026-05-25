@@ -8,10 +8,12 @@ import "aos/dist/aos.css";
 const testimonials = [
     {
         text: `Working with them was an absolute pleasure. They are truly talented, coming up with amazing, unique design ideas that far exceeded my expectations. Communication was fantastic throughout the whole process, and they always respected my budget and met deadlines. I highly recommend them for any interior design work.`,
+        author: "Sankhadeep Das",
     },
     {
         text: `We feel great pleasure to communicate that we are very satisfied with the interior work done for my flat in Newtown by Arunima & her concern.
 Their commitment to work schedule, finishing of work in pre-fixed time is very praiseworthy.`,
+        author: "Runu Banerjee",
     },
     // {
     //     text: `Vivamus ultricies pretium tortor non condimentum.

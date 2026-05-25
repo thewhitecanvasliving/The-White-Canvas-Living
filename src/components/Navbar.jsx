@@ -37,7 +37,7 @@ const Navbar = () => {
                 <a className="nav-link-items home" href="/" onClick={() => setMenuOpen(false)}>Home</a>
                 <a className="nav-link-items portfolio" href="/#featured-section" onClick={() => setMenuOpen(false)}>Featured</a>
                 <a className="nav-link-items about" href="/#aboutus" onClick={() => setMenuOpen(false)}>About</a>
-                <a className="nav-link-items contact" href="/#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+                <a className="nav-link-items contact" href="https://forms.gle/XVbNJMV6rvTpJ37m7" target='_blank' onClick={() => setMenuOpen(false)}>Contact</a>
             </div>
         </div>
     )

@@ -6,6 +6,8 @@ import AboutUsSection from './components/AboutUsSection'
 import TestimonialsSection from './components/TestimonialsSection'
 import Footer from './components/Footer'
 import './App.css'
+import Carousel from './components/Carousel'
+import WorkInProgressCarousel from './components/WorkInProgressCarousel'
 
 function App() {
   return (
@@ -17,9 +19,11 @@ function App() {
         <div className='container'>
           <FeaturedSection />
           <AboutUsSection />
+          <WorkInProgressCarousel />
           <TestimonialsSection />
         </div>
       </div>
+      {/* <Carousel /> */}
 
       <Footer />
     </div>
