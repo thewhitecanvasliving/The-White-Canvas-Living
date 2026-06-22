@@ -1,33 +1,29 @@
-import { useEffect } from 'react'
-import Navbar from './components/Navbar'
-import HeroSection from './components/HeroSection'
-import FeaturedSection from './components/FeaturedSection'
-import AboutUsSection from './components/AboutUsSection'
-import TestimonialsSection from './components/TestimonialsSection'
-import Footer from './components/Footer'
-import './App.css'
-import Carousel from './components/Carousel'
-import WorkInProgressCarousel from './components/WorkInProgressCarousel'
+import Navbar from './components/Navbar';
+import HeroSection from './components/HeroSection';
+import StatsBar from './components/StatsBar';
+import FeaturedSection from './components/FeaturedSection';
+import AboutUsSection from './components/AboutUsSection';
+import ServicesSection from './components/ServicesSection';
+import ProcessSection from './components/ProcessSection';
+import TestimonialsSection from './components/TestimonialsSection';
+import CTABanner from './components/CTABanner';
+import Footer from './components/Footer';
+import useReveal from './components/useReveal';
 
-function App() {
+export default function App() {
+  useReveal();
   return (
-    <div className='white-canvas-living-app'>
+    <>
       <Navbar />
       <HeroSection />
-
-      <div className="whitecanvasliving-wrapper">
-        <div className='container'>
-          <FeaturedSection />
-          <AboutUsSection />
-          <WorkInProgressCarousel />
-          <TestimonialsSection />
-        </div>
-      </div>
-      {/* <Carousel /> */}
-
+      <StatsBar />
+      <FeaturedSection />
+      <AboutUsSection />
+      <ServicesSection />
+      <ProcessSection />
+      <TestimonialsSection />
+      <CTABanner />
       <Footer />
-    </div>
-  )
+    </>
+  );
 }
-
-export default App

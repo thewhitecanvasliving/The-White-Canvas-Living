@@ -1,77 +1,30 @@
-import { useEffect, useRef } from "react";
-import Navbar from './components/Navbar'
-import './SitePage.css'
+import ProjectPage from './components/ProjectPage';
+import { ASSETS } from './assets';
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-import Footer from './components/Footer';
-
-const Site1 = () => {
-
-    const videoRef = useRef(null);
-
-    useEffect(() => {
-        AOS.init({
-            once: true,   // 👈 THIS is the key
-        });
-    }, []);
-
-    useEffect(() => {
-        if (videoRef.current) {
-            videoRef.current.playbackRate = 0.75; // slower
-        }
-    }, []);
-
-    const galleryItems = [
-        { type: "video", src: "/images/site1/vid4.mp4" },
-        { type: "image", src: "/images/site1/img2.jpeg" },
-        { type: "video", src: "/images/site1/vid5.mp4" },
-        { type: "image", src: "/images/site1/img1.jpeg" },
-        { type: "video", src: "/images/site1/vid1.mp4" },
-        { type: "video", src: "/images/site1/vid7.mp4" },
-        { type: "video", src: "/images/site1/vid-A.mp4" },
-        { type: "video", src: "/images/site1/vid3.mp4" },
-        { type: "image", src: "/images/site1/img3.jpeg" },
-        { type: "video", src: "/images/site1/vid6.mp4" },
-        { type: "video", src: "/images/site1/vid2.mp4" }
-    ];
-
-    return (
-        <div className='site-page'>
-            <Navbar />
-            <div className="back-btn" onClick={() => window.history.back()}>
-                &lt; Back
-            </div>
-            <div className="site-page-title">Residence</div>
-
-            <div className="gallery">
-                {galleryItems.map((item, index) => (
-                    <div className="gallery-item" key={index}>
-                        {item.type === "image" ? (
-                            <img src={item.src} alt={`gallery-${index}`} />
-                        ) : (
-                            <video
-                                autoPlay
-                                controls
-                                loop
-                                muted
-                                playsInline
-                                onLoadedMetadata={(e) => {
-                                    e.currentTarget.playbackRate = 0.5; // hardcoded speed
-                                }}
-                            >
-                                <source src={item.src} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
-
-                        )}
-                    </div>
-                ))}
-            </div>
-
-            <Footer />
-        </div>
-    )
+export default function Site1() {
+  return (
+    <ProjectPage
+      site="site1"
+      heroImg={ASSETS.featured3}
+      tag="Residential Interior"
+      title="Residence"
+      loc="Dum Dum, Kolkata"
+      meta={[
+        { label: 'Project Type', value: 'Full Home Interior' },
+        { label: 'Location', value: 'Dum Dum, Kolkata' },
+        { label: 'Year', value: '2025' },
+        { label: 'Scope', value: 'Design + Execution' },
+      ]}
+      brief="A home that breathes warmth"
+      paragraphs={[
+        'This Dum Dum residence asked for a space that felt rooted, restful, and unmistakably personal. We layered earthy textures — wood, linen, stone — with soft natural light to create rooms that feel calm at every hour of the day.',
+        "Every surface, finish, and fixture was selected to age gracefully. The result is a home that doesn't shout for attention but holds it quietly, the way a thoughtful conversation does.",
+      ]}
+      imageCount={7}
+      largeImageIndex={3}
+      videoNames={['vid1', 'vid2', 'vid3', 'vid4', 'vid5', 'vid6']}
+      next={{ to: '/site-2', title: 'Residence — Dum Dum' }}
+      alt={{ to: '/site-3', title: 'Studio Apartment — Naktala' }}
+    />
+  );
 }
-
-export default Site1

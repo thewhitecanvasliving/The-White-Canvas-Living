@@ -1,46 +1,43 @@
-import React, { useState, useEffect } from 'react'
-import './Navbar.css'
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            // change value if your hero height differs
-            if (window.scrollY > window.innerHeight - 70) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
-        };
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [open]);
 
-    return (
-        <div className={`navbar-section ${scrolled ? 'scrolled' : ''}`}>
-            <button
-                className="hamburger-btn"
-                onClick={() => setMenuOpen(!menuOpen)}
-            >
-                ☰
-            </button>
+  const close = () => setOpen(false);
 
-            <a className="nav-items-left" href="/">
-                <span className={`company-name ${scrolled ? 'scrolled' : ''}`}>The White Canvas Living</span>
-                {/* <img src="/images/navbar-logo.png" className='navbar-logo' alt="" /> */}
-            </a>
-
-            <div className={`nav-items-right ${scrolled ? 'scrolled' : ''} ${menuOpen ? ' open' : ''}`}>
-                <a className="nav-link-items home" href="/" onClick={() => setMenuOpen(false)}>Home</a>
-                <a className="nav-link-items portfolio" href="/#featured-section" onClick={() => setMenuOpen(false)}>Featured</a>
-                <a className="nav-link-items about" href="/#aboutus" onClick={() => setMenuOpen(false)}>About</a>
-                <a className="nav-link-items contact" href="https://forms.gle/XVbNJMV6rvTpJ37m7" target='_blank' onClick={() => setMenuOpen(false)}>Contact</a>
-            </div>
-        </div>
-    )
+  return (
+    <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
+      <Link to="/" className="nav-logo" onClick={close} aria-label="The White Canvas Living — Home">
+        <span className="nav-logo-wordmark">The White Canvas Living</span>
+        <span className="nav-logo-text">The White Canvas Living</span>
+      </Link>
+      <ul className={`nav-links${open ? ' open' : ''}`}>
+        <li><a href="/#projects" onClick={close}>Projects</a></li>
+        <li><a href="/#about" onClick={close}>About</a></li>
+        <li><a href="/#services" onClick={close}>Services</a></li>
+        <li><a href="/#testimonials" onClick={close}>Testimonials</a></li>
+      </ul>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfayyvPWI5fNuZy47GvOC4lYD8I5qo21fwk9nmmtanSD3__AA/viewform" target="_blank" rel="noopener noreferrer" className="nav-cta" onClick={close}>Get in Touch</a>
+      <button
+        className={`nav-toggle${open ? ' open' : ''}`}
+        aria-label="Toggle navigation"
+        onClick={() => setOpen((v) => !v)}
+      >
+        <span /><span /><span />
+      </button>
+    </nav>
+  );
 }
-
-export default Navbar

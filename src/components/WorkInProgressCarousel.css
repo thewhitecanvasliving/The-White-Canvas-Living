@@ -1,110 +1,73 @@
-.work-progress-section {
-    padding-top: 120px;
-    overflow: hidden;
-    margin: 0 calc(-1 * (100vw - 1350px) / 2);
+.wip-section {
+  padding: 3.5rem 0 0;
+  margin-top: 1rem;
 }
 
-
-/* =========================
-   HEADING
-========================= */
-
-.work-progress-heading {
-    margin-bottom: 30px;
-    padding-left: 40px;
+.wip-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+  /* Fade edges so cards enter/exit gracefully */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+          mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
 }
 
-
-/* =========================
-   CAROUSEL
-========================= */
-
-.work-progress-carousel {
-    width: 100%;
-    overflow: hidden;       /* clip the track — no scroll needed */
-    position: relative;
+.wip-track {
+  display: flex;
+  width: max-content;
+  cursor: grab;
+  will-change: transform;
+  user-select: none;
 }
 
-.work-progress-track {
-    display: flex;
-    gap: 28px;
-    width: max-content;
-    padding-inline: 40px;
-    will-change: transform;
-    cursor: grab;
-    user-select: none;
+.wip-card {
+  flex-shrink: 0;
+  width: 420px;
+  height: 300px;
+  margin: 0 14px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--bg-alt);
+  box-shadow: 0 8px 24px rgba(44, 24, 16, 0.08);
+  transition: box-shadow 0.4s var(--ease-out);
 }
 
-.work-progress-track:active {
-    cursor: grabbing;
+.wip-card:hover {
+  box-shadow: 0 16px 36px rgba(44, 24, 16, 0.14);
 }
 
-
-/* =========================
-   CARD
-========================= */
-
-.work-progress-card {
-    width: 380px;
-    height: 520px;
-    overflow: hidden;
-    flex-shrink: 0;
-    position: relative;
-    border-radius: 26px;
-    background-color: #ddd5cc;
+.wip-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform 0.6s var(--ease-out);
 }
 
-.work-progress-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(100%);
-    transition: transform 0.7s ease;
-    pointer-events: none;   /* prevents image ghost-drag */
-    transition: all 0.3s ease;
+.wip-card:hover img {
+  transform: scale(1.04);
 }
-
-.work-progress-card:hover img {
-    transform: scale(1.04);
-    filter: grayscale(0%);
-}
-
-.work-progress-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.18),
-        rgba(0, 0, 0, 0.02)
-    );
-    pointer-events: none;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width: 768px) {
+  .wip-section { padding: 2.5rem 0 0; margin-top: 0; }
+  .wip-card { width: 280px; height: 200px; margin: 0 10px; }
+}
 
-    .work-progress-section {
-        padding: 80px 0;
-        margin: 0;
-    }
-
-    .work-progress-heading {
-        padding: 0 20px;
-        margin-bottom: 50px;
-    }
-
-    .work-progress-card {
-        width: 280px;
-        height: 400px;
-    }
-
-    .work-progress-track {
-        padding-inline: 20px;
-    }
-
+@media (prefers-reduced-motion: reduce) {
+  .wip-track { animation: none !important; }
 }

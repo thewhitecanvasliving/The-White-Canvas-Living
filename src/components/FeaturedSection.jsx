@@ -1,70 +1,77 @@
-import './FeaturedSection.css'
-import { useEffect } from 'react'
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { Link } from 'react-router-dom';
+import { ASSETS } from '../assets';
 
-const FeaturedSection = () => {
+const PROJECTS = [
+  {
+    to: '/site-2',
+    img: ASSETS.featured1,
+    tag: 'Residential Interior',
+    name: 'Residence',
+    loc: 'Dum Dum, Kolkata',
+    badge: 'Featured',
+    large: true,
+  },
+  {
+    to: '/site-3',
+    img: ASSETS.featured2,
+    tag: 'Studio Apartment',
+    name: 'Urban Studio',
+    loc: 'Naktala, Kolkata',
+  },
+  {
+    to: '/site-1',
+    img: ASSETS.featured3,
+    tag: 'Residential Interior',
+    name: 'Residence',
+    loc: 'Dum Dum, Kolkata',
+  },
+];
 
-    useEffect(() => {
-        AOS.init({
-            once: true,   // 👈 THIS is the key
-        });
-    }, []);
-
-    return (
-        <div className='featured-section' id='featured-section'>
-            <div className="section-pre-title">FEATURED PROJECTS</div>
-            <div className="section-title featured">
-                Spaces Designed. Stories Inspired.
-            </div>
-            <div className="section-subtitle" data-aos='fade-up'>Discover our latest transformations that blend functionality with timeless beauty</div>
-
-            <div className="featured-images-wrapper">
-                {/* card 1 */}
-                <a href="/site-2" className="featured-card" data-aos="fade-up" data-aos-delay="200">
-                    <div className="card-gradient">
-                        <div className="card-info">
-                            <h2 className="project-title">Residence</h2>
-                            <div className="project-subtitle">DUM DUM, KOLKATA</div>
-                        </div>
-                    </div>
-                    <img src="/images/featured2.JPG" className="featured-image" alt="Featured Project 2" />
-                </a>
-                {/* card 2 */}
-                <a href="/site-3" className="featured-card" data-aos="fade-up" data-aos-delay="100">
-                    <div className="card-gradient">
-                        <div className="card-info">
-                            <h2 className="project-title">Studio<br />Apartment</h2>
-                            <div className="project-subtitle">NAKTALA, KOLKATA</div>
-                        </div>
-                    </div>
-                    <img src="/images/featured3-1.png" className="featured-image" alt="Featured Project 1" />
-                </a>
-                {/* card 3 */}
-                <a href='/site-1' className="featured-card" data-aos="fade-up" data-aos-delay="200">
-                    <div className="card-gradient">
-                        <div className="card-info">
-                            <h2 className="project-title">Residence</h2>
-                            <div className="project-subtitle">DUM DUM, KOLKATA</div>
-                        </div>
-                    </div>
-                    <img src="/images/featured3.jpeg" className="featured-image" alt="Featured Project 3" />
-                </a>
-            </div>
-
-            {/* <div className="projects-dropdown">
-                <button className="see-all-projects-btn">
-                    SEE ALL PROJECTS ▾
-                </button>
-
-                <div className="projects-dropdown-menu">
-                    <a href="/site-1" target="_blank">Site 1</a>
-                    <a href="/site-2" target="_blank">Site 2</a>
-                </div>
-            </div> */}
-
+export default function FeaturedSection() {
+  return (
+    <section className="section" id="projects">
+      <div className="container">
+        <div className="featured-header reveal">
+          <div className="featured-header-left">
+            <p className="label">Our Work</p>
+            <h2 className="section-title">
+              Spaces Designed.<br />Stories Inspired.
+            </h2>
+            <p className="featured-desc">
+              Discover our latest transformations that blend functionality with
+              timeless beauty.
+            </p>
+          </div>
+          <a href="#contact" className="view-all">
+            All Projects
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
         </div>
-    )
-}
 
-export default FeaturedSection
+        <div className="projects-grid">
+          {PROJECTS.map((p, i) => (
+            <Link
+              key={p.to}
+              to={p.to}
+              className={`project-card reveal${p.large ? ' large' : ''}${
+                i > 0 ? ` reveal-delay-${i}` : ''
+              }`}
+            >
+              {p.badge && <span className="project-badge">{p.badge}</span>}
+              <img src={p.img} alt={`${p.name} — ${p.loc}`} loading="lazy" />
+              <div className="project-overlay">
+                <div className="project-info">
+                  <p className="project-tag">{p.tag}</p>
+                  <p className="project-name">{p.name}</p>
+                  <p className="project-loc">{p.loc}</p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,34 +1,21 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import App from './App.jsx';
+import Site1 from './Site1.jsx';
+import Site2 from './Site2.jsx';
+import Site3 from './Site3.jsx';
+import './index.css';
 
-import './index.css'
-import App from './App.jsx'
-import Site1 from './Site1.jsx'
-import Site2 from './Site2.jsx'
-import Site3 from './Site3.jsx'
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-  },
-  {
-    path: '/site-1',
-    element: <Site1 />,
-  },
-  {
-    path: '/site-2',
-    element: <Site2 />,
-  },
-  {
-    path: '/site-3',
-    element: <Site3 />,
-  },
-])
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
-)
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/site-1" element={<Site1 />} />
+        <Route path="/site-2" element={<Site2 />} />
+        <Route path="/site-3" element={<Site3 />} />
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>,
+);

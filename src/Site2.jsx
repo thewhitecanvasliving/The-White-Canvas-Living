@@ -1,70 +1,30 @@
-import { useEffect } from 'react'
-import Navbar from './components/Navbar'
-import './SitePage.css'
+import ProjectPage from './components/ProjectPage';
+import { ASSETS } from './assets';
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-import Footer from './components/Footer';
-
-const Site2 = () => {
-
-    useEffect(() => {
-        AOS.init({
-            once: true,   // 👈 THIS is the key
-        });
-    }, []);
-
-    const galleryItems = [
-        { type: "video", src: "/images/site2/vid4.mp4" },
-        { type: "image", src: "/images/site2/img2.jpeg" },
-        { type: "video", src: "/images/site2/vid5.mp4" },
-        { type: "image", src: "/images/site2/img1.jpeg" },
-        { type: "video", src: "/images/site2/vid1.mp4" },
-        { type: "image", src: "/images/site2/img3.jpeg" },
-        { type: "video", src: "/images/site2/vid-A.mp4" },
-        { type: "image", src: "/images/site2/img4.jpeg" },
-        { type: "video", src: "/images/site2/vid3.mp4" },
-        { type: "image", src: "/images/site2/img5.jpeg" },
-        { type: "video", src: "/images/site2/vid2.mp4" },
-        { type: "image", src: "/images/site2/img6.jpeg" },
-    ];
-
-    return (
-        <div className='site-page'>
-            <Navbar />
-            <div className="back-btn" onClick={() => window.history.back()}>
-                &lt; Back
-            </div>
-            <div className="site-page-title">Residence</div>
-
-            <div className="gallery">
-                {galleryItems.map((item, index) => (
-                    <div className="gallery-item" key={index}>
-                        {item.type === "image" ? (
-                            <img src={item.src} alt={`gallery-${index}`} />
-                        ) : (
-                            <video
-                                autoPlay
-                                controls
-                                loop
-                                muted
-                                playsInline
-                                onLoadedMetadata={(e) => {
-                                    e.currentTarget.playbackRate = 0.5; // hardcoded speed
-                                }}
-                            >s
-                                <source src={item.src} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
-
-                        )}
-                    </div>
-                ))}
-            </div>
-
-            <Footer />
-        </div>
-    )
+export default function Site2() {
+  return (
+    <ProjectPage
+      site="site2"
+      heroImg={ASSETS.featured1}
+      tag="Residential Interior · Featured"
+      title="Residence"
+      loc="Dum Dum, Kolkata"
+      meta={[
+        { label: 'Project Type', value: 'Full Home Interior' },
+        { label: 'Location', value: 'Dum Dum, Kolkata' },
+        { label: 'Year', value: '2025' },
+        { label: 'Scope', value: 'Design + Execution' },
+      ]}
+      brief="Effortless living, beautifully detailed"
+      paragraphs={[
+        'For this Dum Dum family home, we set out to design a space that quietly elevates daily rituals — from morning coffee to late-night conversations. Spatial flow guided every decision, with carefully zoned areas that feel open yet intimate.',
+        'A warm, grounded palette of clay tones, brushed wood, and stone-textured surfaces anchors the home. Bespoke joinery and considered lighting bring the architecture to life — making the everyday feel just a little more elevated.',
+      ]}
+      imageCount={6}
+      largeImageIndex={1}
+      videoNames={['vid1', 'vid2', 'vid3', 'vid4', 'vid5', 'vid-A']}
+      next={{ to: '/site-3', title: 'Studio Apartment — Naktala' }}
+      alt={{ to: '/site-1', title: 'Residence — Dum Dum' }}
+    />
+  );
 }
-
-export default Site2
