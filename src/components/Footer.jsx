@@ -80,10 +80,31 @@ export default function Footer() {
             © {new Date().getFullYear()} The White Canvas Living. All rights
             reserved.
           </p>
-          <div className="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-          </div>
+          <p className="footer-credit">
+            Kolkata, India · Website by{' '}
+            <a
+              href="#"
+              className="footer-credit-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Rupam
+              <svg
+                className="footer__credit-link-icon"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M9 2h5v5" />
+                <path d="M14 2L7 9" />
+                <path d="M12 9v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h4" />
+              </svg>
+            </a>
+          </p>
         </div>
       </div>
     </footer>
