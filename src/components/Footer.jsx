@@ -83,7 +83,7 @@ export default function Footer() {
           <p className="footer-credit">
             Kolkata, India · Website by{' '}
             <a
-              href="#"
+              href="https://www.rupamdhar.in/"
               className="footer-credit-link"
               target="_blank"
               rel="noopener noreferrer"
